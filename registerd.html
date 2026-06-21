@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OK Varanasi Login</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Outfit',sans-serif;
+}
+
+body{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:
+radial-gradient(circle at top,
+rgba(0,242,254,.15),
+transparent 40%),
+#060E1A;
+overflow:hidden;
+}
+
+body::before{
+content:"";
+position:absolute;
+width:400px;
+height:400px;
+background:#00F2FE;
+filter:blur(180px);
+opacity:.15;
+top:-150px;
+right:-100px;
+}
+
+body::after{
+content:"";
+position:absolute;
+width:350px;
+height:350px;
+background:#FF6B08;
+filter:blur(180px);
+opacity:.15;
+bottom:-120px;
+left:-120px;
+}
+
+.auth-card{
+position:relative;
+z-index:2;
+
+width:420px;
+max-width:92%;
+
+padding:40px;
+
+border-radius:28px;
+
+background:rgba(255,255,255,.04);
+
+backdrop-filter:blur(25px);
+
+border:1px solid rgba(0,242,254,.15);
+
+box-shadow:
+0 0 30px rgba(0,242,254,.08);
+}
+
+.logo{
+text-align:center;
+margin-bottom:30px;
+}
+
+.logo h1{
+font-size:2.5rem;
+color:white;
+font-family:'Marcellus',serif;
+}
+
+.logo span{
+color:#00F2FE;
+}
+
+.logo p{
+margin-top:8px;
+color:#8892B0;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+margin-bottom:25px;
+}
+
+.tab{
+flex:1;
+padding:12px;
+border:none;
+cursor:pointer;
+border-radius:12px;
+background:#172A45;
+color:white;
+font-weight:600;
+transition:.3s;
+}
+
+.tab.active{
+background:linear-gradient(
+135deg,
+#FF6B08,
+#FF8C32
+);
+}
+
+.input-box{
+display:flex;
+align-items:center;
+gap:12px;
+
+background:#172A45;
+
+padding:15px 18px;
+
+border-radius:14px;
+
+margin-bottom:15px;
+}
+
+.input-box i{
+color:#00F2FE;
+}
+
+.input-box input{
+width:100%;
+background:none;
+border:none;
+outline:none;
+color:white;
+font-size:.95rem;
+}
+
+.input-box input::placeholder{
+color:#8892B0;
+}
+
+.btn{
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:14px;
+
+background:linear-gradient(
+135deg,
+#FF6B08,
+#FF8C32
+);
+
+color:white;
+
+font-weight:700;
+
+font-size:1rem;
+
+cursor:pointer;
+
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-3px);
+}
+
+.forgot{
+display:block;
+text-align:center;
+margin-top:15px;
+color:#00F2FE;
+text-decoration:none;
+font-size:.9rem;
+}
+
+.bottom-text{
+text-align:center;
+margin-top:20px;
+color:#8892B0;
+font-size:.9rem;
+}
+
+.bottom-text a{
+color:#00F2FE;
+text-decoration:none;
+}
+
+.signup-fields{
+display:none;
+}
+
+.show{
+display:block;
+}
+
+.hide{
+display:none;
+}
+
+@media(max-width:480px){
+
+.auth-card{
+padding:30px 22px;
+}
+
+.logo h1{
+font-size:2rem;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="auth-card">
+
+<div class="logo">
+<h1>OK <span>VARANASI</span></h1>
+<p>Explore the Spiritual Capital of India</p>
+</div>
+
+<div class="tabs">
+<button class="tab active" id="loginTab">
+Login
+</button>
+
+<button class="tab" id="signupTab">
+Signup
+</button>
+</div>
+
+<form id="authForm">
+
+<div class="input-box">
+<i class="fa-solid fa-envelope"></i>
+<input type="email" placeholder="Email Address" required>
+</div>
+
+<div class="signup-fields" id="signupFields">
+
+<div class="input-box">
+<i class="fa-solid fa-user"></i>
+<input type="text" placeholder="Full Name">
+</div>
+
+</div>
+
+<div class="input-box">
+<i class="fa-solid fa-lock"></i>
+<input type="password" placeholder="Password" required>
+</div>
+
+<button type="submit" class="btn" id="mainBtn">
+Login
+</button>
+
+<a href="#" class="forgot">
+Forgot Password?
+</a>
+
+<div class="bottom-text" id="bottomText">
+Don't have an account?
+<a href="#">Signup</a>
+</div>
+
+</form>
+
+</div>
+
+<script>
+
+const loginTab =
+document.getElementById("loginTab");
+
+const signupTab =
+document.getElementById("signupTab");
+
+const signupFields =
+document.getElementById("signupFields");
+
+const mainBtn =
+document.getElementById("mainBtn");
+
+const bottomText =
+document.getElementById("bottomText");
+
+loginTab.addEventListener("click",()=>{
+
+loginTab.classList.add("active");
+signupTab.classList.remove("active");
+
+signupFields.classList.remove("show");
+
+mainBtn.textContent="Login";
+
+bottomText.innerHTML=
+`Don't have an account?
+<a href="#">Signup</a>`;
+
+});
+
+signupTab.addEventListener("click",()=>{
+
+signupTab.classList.add("active");
+loginTab.classList.remove("active");
+
+signupFields.classList.add("show");
+
+mainBtn.textContent="Create Account";
+
+bottomText.innerHTML=
+`Already have an account?
+<a href="#">Login</a>`;
+
+});
+
+document.getElementById("authForm")
+.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+alert("OK Varanasi Login UI Ready 🚀");
+
+});
+
+</script>
+
+</body>
+</html>
