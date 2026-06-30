@@ -1572,15 +1572,24 @@ footer {
 
 
 /* Theme toggle support */
-body.light-mode {
-  --color-navy-deep: #f4f7fb;
-  --color-navy-dark: #ffffff;
-  --color-navy-mid: #eef4ff;
-  --color-text-light: #10233d;
-  --color-text-muted: #5f6f87;
-  --color-white: #10233d;
-  --color-glass-bg: rgba(255, 255, 255, 0.72);
-  --color-glass-border: rgba(0, 102, 255, 0.12);
+body.light-mode{
+  --color-saffron:#FF6B08;
+  --color-marigold:#FF8C32;
+
+  --color-navy-deep:#f4f7fb;
+  --color-navy-dark:#ffffff;
+  --color-navy-mid:#eef4ff;
+
+  --color-cyan-glow:#0066ff;   /* IMPORTANT */
+
+  --color-text-light:#0066ff;
+  --color-text-muted:#5f6f87;
+  --color-white:#0066ff;
+
+  --color-glass-bg:rgba(255,255,255,.72);
+  --color-glass-border:rgba(0,102,255,.15);
+
+  --shadow-glow:0 0 20px rgba(0,102,255,.25);
 }
 
 /* If your CSS uses custom variables like these, this will flip the page properly */
