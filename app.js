@@ -126,17 +126,53 @@ const PLACES_DATA = [
 
 const INITIAL_DIRECTORY = [
   {
-    id: "brijrama-palace",
-    name: "BrijRama Palace",
-    category: "hotels",
-    tag: "Heritage Luxury Resort",
-    rating: 4.9,
-    reviewsCount: 312,
-    phone: "+91 542 240 6000",
-    email: "info@brijrama.com",
-    address: "Darbhanga Ghat, Varanasi",
-    desc: "A boutique heritage hotel built in 1812. Located directly on the banks of Ganga, offering breathtaking views, classic architecture, and live sitar concerts every evening."
-  },
+    id: "heritage-hospitals",
+    name: "Heritage Hospitals",
+    category: "hospitals",
+    tag: "Multi Speciality Hospital",
+    rating: 4.6,
+    reviewsCount: 8241,
+    phone: "+91 542 7181911",
+    email: "info@heritagehospitals.com",
+    address: "Lanka, Varanasi, Uttar Pradesh 221005",
+    desc: "One of the leading NABH accredited multi-speciality hospitals in Varanasi offering advanced healthcare, emergency care, diagnostics and super speciality services."
+},
+{
+    id: "sir-sunderlal-hospital",
+    name: "Sir Sunderlal Hospital (BHU)",
+    category: "hospitals",
+    tag: "Government Teaching Hospital",
+    rating: 4.5,
+    reviewsCount: 5000,
+    phone: "+91 542 2368547",
+    email: "",
+    address: "Banaras Hindu University (BHU), Lanka, Varanasi, Uttar Pradesh 221005",
+    desc: "Premier government teaching hospital under Banaras Hindu University providing affordable tertiary healthcare and trauma services."
+},
+{
+    id: "popular-hospital",
+    name: "Popular Hospital",
+    category: "hospitals",
+    tag: "Multi Speciality Hospital",
+    rating: 4.4,
+    reviewsCount: 4229,
+    phone: "+91 7800001896",
+    email: "",
+    address: "A-2, N-10/60, DLW Road, Near Flyover, Bajardiha, Varanasi, Uttar Pradesh 221004",
+    desc: "Well-known private multi-speciality hospital providing emergency, ICU, diagnostics, surgery and specialist medical services."
+},
+// {
+//     id: "galaxy-hospital",
+//     name: "Galaxy Hospital",
+//     category: "hospitals",
+//     tag: "Private Multi Speciality Hospital",
+//     rating: 3.9,
+//     reviewsCount: 1240,
+//     phone: "+91 8874205817",
+//     email: "",
+//     address: "4,5,6,7 Dayal Enclave, Mahmoorganj Road, Near Railway Station, Mahmoorganj, Varanasi, Uttar Pradesh 221010",
+//     desc: "Modern multi-speciality hospital offering emergency care, surgery, diagnostics and specialist consultations."
+// },
 
 ];
 
