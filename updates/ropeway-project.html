@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Varanasi Ropeway Project | OK Varanasi</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description"
+      content="Explore historic Varanasi Ropeway Project in Varanasi – royal palace, museum, Dussehra celebrations and visitor information." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+      rel="stylesheet">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ── Theme ───────────────────────────────────────────────────── */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+:root{
+  --bg:#060e1a;--bg2:#0a192f;--card:#15253d;--text:#f4f6f9;--muted:#8a95ac;
+  --cyan:#00f2fe;--saffron:#ff6b08;--gold:#ffd56b;--border:rgba(0,242,254,.16);
+  --shadow:0 18px 45px rgba(0,0,0,.35);
+}
+body.light{
+  --bg:#f4f7fb;--bg2:#fff;--card:#fff;--text:#10233d;--muted:#5f6f87;
+  --cyan:#0066ff;--saffron:#ff7a1a;--gold:#b8860b;--border:rgba(0,102,255,.16);
+  --shadow:0 18px 45px rgba(20,40,80,.10);
+}
+body{
+  background:var(--bg);color:var(--text);overflow-x:hidden;
+  transition:background .35s ease,color .35s ease;
+}
+
+/* ── Layout ─────────────────────────────────────────────────── */
+.container{width:min(1200px,92%);margin:auto}
+.header,.footer{background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);}
+.footer{border-top:1px solid rgba(255,255,255,.06);border-bottom:none;
+  padding:40px 0;background:rgba(255,255,255,.02);}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:16px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;color:var(--text);text-decoration:none}
+.logo-ok{font-size:2rem;font-weight:800}
+.logo-varanasi{display:flex;flex-direction:column;font-size:1rem;font-weight:800;
+  color:var(--cyan);letter-spacing:2px;text-transform:uppercase;
+  border-left:2px solid var(--saffron);padding-left:10px}
+.logo-varanasi span{color:var(--saffron);font-size:.62rem;letter-spacing:1px;margin-top:2px}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a{color:var(--text);font-weight:600;opacity:.85;transition:.25s;text-decoration:none}
+.nav-links a:hover,.nav-links a.active{color:var(--cyan);opacity:1}
+.icon-btn{width:42px;height:42px;border:1px solid var(--border);
+  background:rgba(255,255,255,.04);color:var(--text);border-radius:14px;
+  cursor:pointer;display:inline-flex;align-items:center;justify-content:center;
+  box-shadow:var(--shadow);transition:.25s}
+.icon-btn:hover{transform:translateY(-2px);border-color:var(--cyan)}
+
+/* ── Main Content ───────────────────────────────────────────── */
+main{padding:60px 0}
+h1{font-family:'Marcellus',serif;font-size:clamp(2rem,5vw,3rem);
+  margin-bottom:1rem;color:var(--gold)}
+section{margin-bottom:3rem}
+section h2{font-family:'Marcellus',serif;color:var(--cyan);margin-bottom:.8rem}
+section p,section ul{color:var(--muted);line-height:1.6;margin-bottom:1rem}
+section ul{margin-left:1.5rem;list-style:disc}
+
+/* ── Gallery (top of the page) ───────────────────────────────────── */
+.gallery{max-width:1000px;margin:30px auto}
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px}
+.gallery-grid img{
+  width:100%;height:180px;object-fit:cover;border-radius:12px;
+  border:1px solid var(--border);box-shadow:var(--shadow);
+  transition:transform .3s}
+.gallery-grid img:hover{transform:scale(1.04)}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:24px;margin-bottom:24px}
+.footer h3{color:var(--text);font-family:'Marcellus',serif;margin-bottom:12px;font-size:1.3rem}
+.footer a,.footer p{color:var(--muted);line-height:1.7;text-decoration:none}
+.footer a:hover{color:var(--cyan)}
+.footer-links{display:flex;flex-direction:column;gap:10px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);
+  padding-top:16px;text-align:center;font-size:.95rem}
+
+/* ── Responsive ─────────────────────────────────────────────── */
+@media (max-width:768px){
+  .nav{flex-direction:column;gap:14px}
+  .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+  <div class="container nav">
+    <a href="index.html" class="logo" aria-label="OK Varanasi Home">
+      <div class="logo-ok">OK</div>
+      <div class="logo-varanasi">
+        VARANASI
+        <span>City of Light</span>
+      </div>
+    </a>
+
+    <nav class="nav-links" aria-label="Primary">
+      <a href="../index.html">Home</a>
+      <a href="../places.html">Places</a>
+      <a href="../new.html">New</a>
+      <button class="icon-btn" id="themeToggle"
+              aria-label="Toggle theme" title="Toggle bright/dark mode">
+        <i class="fa-solid fa-moon"></i>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <!-- TITLE -->
+  <h1>Varanasi Ropeway Project</h1>
+
+  <!-- GALLERY – appears right under the title -->
+  <section class="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery-grid">
+           <img src="../assets/ropeway.png"
+           alt="Varanasi Ropeway Project ">
+           <img src="../assets/place-images/ropeway1.png"
+           alt="Varanasi Ropeway Project ">
+           <img src="../assets/place-images/ropeway2.png"
+           alt="Varanasi Ropeway Project ">
+          
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <h2>About Varanasi Ropeway Project</h2>
+    <p>The Varanasi Ropeway Project is India's first urban public ropeway system. It connects Cantt Railway Station to Godowlia to reduce traffic congestion and provide faster, eco-friendly transportation for residents and tourists.</p>
+  </section>
+
+  <!-- HISTORY & ORIGIN -->
+  <section>
+    <h2>Project Timeline</h2>
+    <ul><li>Project approved by the Government of India and Uttar Pradesh.</li><li>Construction began with station and pillar development.</li><li>Testing and final work are expected before public opening.</li></ul>
+  </section>
+
+  <!-- ARCHITECTURE & DESIGN -->
+  <section>
+    <h2>Architecture &amp; Design</h2>
+    <ul><li>Modern monocable detachable gondola system.</li><li>Five passenger stations.</li><li>Automatic gondola cabins with safety systems.</li><li>Designed for quick urban transport.</li></ul>
+  </section>
+
+  <!-- SARASWATI BHAVAN MUSEUM -->
+  <section>
+    <h2>Project Cost</h2>
+    <p>The total estimated project cost is around <strong>₹645 crore</strong>, including stations, ropeway system, civil works and supporting infrastructure.</p>
+  </section>
+
+  <!-- DUSSEHRA & RAM LILA FESTIVAL -->
+  <section>
+    <h2>Facilities</h2>
+    <p>The ropeway will offer automatic cabins, CCTV surveillance, disabled-friendly access, digital ticketing, modern stations and comfortable city travel.</p>
+  </section>
+
+  <!-- TIMINGS & ENTRY FEE -->
+  <section>
+    <h2>Expected Completion</h2>
+    <ul><li><strong>Status:</strong> Final construction and testing stage</li><li><strong>Expected Opening:</strong> After safety approvals</li><li><strong>Route Length:</strong> About 3.75 km</li><li><strong>Stations:</strong> 5</li></ul>
+  </section>
+
+  <!-- HOW TO REACH -->
+  <section>
+    <h2>How to Reach</h2>
+    <ul><li><strong>Start:</strong> Cantt Railway Station</li><li><strong>End:</strong> Godowlia</li><li><strong>Nearest Airport:</strong> Lal Bahadur Shastri International Airport</li><li><strong>Access:</strong> Easily reachable by road and rail.</li></ul>
+  </section>
+
+  <!-- NEARBY ATTRACTIONS -->
+  <section>
+    <h2>Nearby Attractions</h2>
+    <ul><li>Kashi Vishwanath Temple</li><li>Godowlia</li><li>Dashashwamedh Ghat</li><li>Assi Ghat</li><li>Sarnath</li></ul>
+  </section>
+
+  <!-- TRAVEL TIPS & FUN FACTS -->
+  <section>
+    <h2>Travel Tips &amp; Fun Facts</h2>
+    <ul><li>Use the ropeway to avoid traffic.</li><li>Visit early during festivals.</li><li>Check operating hours before travel.</li></ul>
+  </section>
+
+  <!-- DISCLAIMER -->
+  <section>
+    <h2>Disclaimer</h2>
+    <p>The information is for general awareness. Project timelines may change. Please verify official updates before visiting.</p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- LOGO REPEATED IN FOOTER -->
+      <div>
+        <a href="index.html" class="logo" aria-label="OK Varanasi Home">
+          <div class="logo-ok">OK</div>
+          <div class="logo-varanasi">
+            VARANASI
+            <span>City of Light</span>
+          </div>
+        </a>
+        <p style="margin-top:.8rem;color:var(--muted);max-width:280px;">
+          A local directory and travel guide for Varanasi. Explore temples,
+          ghats, food, markets, hotels and cultural places – all in one place.
+        </p>
+      </div>
+
+      <div>
+        <h3>Quick Links</h3>
+        <div class="footer-links">
+          <a href="../history.html">History</a>
+          <a href="../places.html">Places</a>
+          <a href="../new.html">New</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <p>Email: contact@okvaranasi.com</p>
+        <p>Phone: +91 9118717157</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 OK Varanasi. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Light / dark theme toggle – same behaviour as other pages */
+const themeToggle = document.getElementById('themeToggle');
+function applyTheme(t){
+  document.body.classList.toggle('light', t==='light');
+  themeToggle.innerHTML = t==='light' ?
+    '<i class="fa-solid fa-sun"></i>' :
+    '<i class="fa-solid fa-moon"></i>';
+  localStorage.setItem('okvaranasi-theme', t);
+}
+themeToggle.addEventListener('click', () => {
+  const isLight = document.body.classList.contains('light');
+  applyTheme(isLight ? 'dark' : 'light');
+});
+applyTheme(localStorage.getItem('okvaranasi-theme') || 'dark');
+</script>
+</body>
+</html>
