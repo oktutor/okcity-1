@@ -1612,3 +1612,161 @@ body.light-mode .directory-card {
 #theme-toggle {
   min-width: 42px;
 }
+
+
+
+/* =========================================================
+   RESPONSIVE PATCH - Added by ChatGPT
+   ========================================================= */
+img{
+  max-width:100%;
+  height:auto;
+  display:block;
+}
+
+@media (max-width:768px){
+
+  .container{
+    padding:0 1rem;
+  }
+
+  .hero{
+    min-height:auto;
+    padding:110px 0 60px;
+  }
+
+  .hero-content{
+    margin-top:0;
+  }
+
+  .hero h2{
+    font-size:2.2rem;
+    line-height:1.2;
+  }
+
+  .hero-description{
+    font-size:1rem;
+    margin-bottom:1.5rem;
+  }
+
+  .hero-search{
+    flex-direction:column;
+    border-radius:18px;
+    gap:.6rem;
+    padding:.8rem;
+  }
+
+  .hero-search i{
+    display:none;
+  }
+
+  .hero-search input,
+  .hero-search button{
+    width:100%;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    gap:1rem;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+  }
+
+  .hero-stats{
+    grid-template-columns:1fr;
+    gap:1rem;
+    margin-top:2rem;
+  }
+
+  .explore-grid,
+  .food-grid,
+  .contact-grid,
+  .guides-grid,
+  .footer-grid{
+    grid-template-columns:1fr !important;
+    gap:2rem;
+  }
+
+  .places-grid,
+  .directory-grid{
+    grid-template-columns:1fr;
+  }
+
+  .explore-section,
+  .places-section,
+  .food-section,
+  .directory-section,
+  .guides-section,
+  .contact-section{
+    padding:4.5rem 0;
+  }
+
+  .explore-visual,
+  .food-showcase{
+    height:300px;
+  }
+
+  .food-header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.5rem;
+  }
+
+  .directory-controls{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .directory-search-bar{
+    max-width:100%;
+  }
+
+  .contact-detail-item{
+    flex-direction:column;
+    gap:.8rem;
+  }
+
+  .modal-content{
+    padding:1.2rem;
+    border-radius:14px;
+  }
+
+  .footer-bottom{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+
+@media (max-width:480px){
+
+  .section-title{
+    font-size:1.9rem;
+  }
+
+  .hero h2{
+    font-size:1.8rem;
+  }
+
+  .btn{
+    padding:.85rem 1.2rem;
+    font-size:.9rem;
+  }
+
+  .place-card,
+  .guide-card,
+  .directory-card,
+  .glass-panel{
+    border-radius:12px;
+  }
+
+  .event-card{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .event-date{
+    margin:0 0 1rem 0;
+  }
+}
