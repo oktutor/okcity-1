@@ -14,7 +14,7 @@ $dbname = "u196976884_login_system";
 $username = "u196976884_shubham_admin";
 
 // Database Password
-$password = "";
+$password = "Shub@1982";
 
 // Create Connection
 $conn = new mysqli($host, $username, $password, $dbname);
