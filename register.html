@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OK Varanasi Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+:root{--bg:#060e1a;--card:#15253d;--text:#f4f6f9;--muted:#8a95ac;--cyan:#00f2fe;--saffron:#ff6b08}
+body{background:var(--bg);color:var(--text);min-height:100vh;overflow:hidden}
+body:before{content:'';position:absolute;top:-150px;right:-100px;width:400px;height:400px;background:var(--cyan);opacity:.12;filter:blur(150px)}
+body:after{content:'';position:absolute;bottom:-150px;left:-100px;width:350px;height:350px;background:var(--saffron);opacity:.12;filter:blur(150px)}
+.header{position:absolute;top:0;left:0;width:100%;padding:20px 5%;z-index:10}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.logo-ok{font-size:2rem;font-weight:800}
+.logo-varanasi{display:flex;flex-direction:column;color:var(--cyan);font-weight:800;border-left:2px solid var(--saffron);padding-left:10px}
+.logo-varanasi span{font-size:.65rem;color:var(--saffron)}
+.wrap{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{width:430px;max-width:100%;background:rgba(255,255,255,.04);backdrop-filter:blur(20px);border-radius:24px;padding:38px;border:1px solid rgba(255,255,255,.08)}
+h1{font-family:'Marcellus',serif;text-align:center}
+p{text-align:center;color:var(--muted);margin:8px 0 24px}
+.input{display:flex;align-items:center;gap:12px;background:#0f1d31;border-radius:14px;padding:15px;margin-bottom:15px}
+.input i{color:var(--cyan)}
+.input input{width:100%;background:none;border:none;outline:none;color:#fff}
+button{width:100%;padding:15px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--saffron),var(--cyan));font-weight:700;cursor:pointer}
+.bottom{text-align:center;margin-top:20px;color:var(--muted)}
+.bottom a{color:var(--cyan);text-decoration:none}
+label{font-size:.9rem;color:var(--muted)}
+</style>
+</head>
+<body>
+<header class="header">
+<a href="index.html" class="logo">
+<div class="logo-ok">OK</div>
+<div class="logo-varanasi">VARANASI<span>City of Light</span></div>
+</a>
+</header>
+
+<section class="wrap">
+<div class="card">
+<h1>Create Account</h1>
+<p>Create your OK Varanasi account</p>
+
+<form id="registerForm" action="api/register.php" method="POST">
+
+<div class="input"><i class="fa-solid fa-user"></i><input type="text" name="fullname" placeholder="Full Name" required></div>
+<div class="input"><i class="fa-solid fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required></div>
+<div class="input"><i class="fa-solid fa-phone"></i><input type="tel" name="phone" placeholder="Mobile Number" required></div>
+<div class="input"><i class="fa-solid fa-lock"></i><input type="password" name="password" placeholder="Password" required></div>
+<div class="input"><i class="fa-solid fa-lock"></i><input type="password" name="confirm_password" placeholder="Confirm Password" required></div>
+
+<p style="text-align:left;margin:10px 0">
+<label><input type="checkbox" required> I agree to the Terms & Conditions</label>
+</p>
+
+<button type="submit">Create Account</button>
+</form>
+
+<div class="bottom">
+Already have an account? <a href="login.html">Login</a>
+</div>
+
+</div>
+</section>
+
+<script>
+const registerForm=document.getElementById("registerForm");
+registerForm.addEventListener("submit",function(e){
+e.preventDefault();
+const formData=new FormData(registerForm);
+fetch("api/register.php",{method:"POST",body:formData})
+.then(r=>r.text())
+.then(data=>{
+if(data.trim()==="success"){
+alert("Registration Successful!");
+window.location.href="login.html";
+}else{
+alert(data);
+}
+})
+.catch(()=>{
+alert("Something went wrong.");
+});
+});
+</script>
+
+</body>
+</html>

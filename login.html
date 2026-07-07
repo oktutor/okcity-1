@@ -3,336 +3,75 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>OK Varanasi Login</title>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Outfit',sans-serif;
-}
-
-:root{
---bg:#060e1a;
---card:#15253d;
---text:#f4f6f9;
---muted:#8a95ac;
---cyan:#00f2fe;
---saffron:#ff6b08;
---border:rgba(0,242,254,.15);
-}
-
-body{
-background:var(--bg);
-color:var(--text);
-min-height:100vh;
-overflow:hidden;
-}
-
-body::before{
-content:"";
-position:absolute;
-top:-150px;
-right:-100px;
-width:400px;
-height:400px;
-background:var(--cyan);
-opacity:.12;
-filter:blur(150px);
-}
-
-body::after{
-content:"";
-position:absolute;
-bottom:-150px;
-left:-100px;
-width:350px;
-height:350px;
-background:var(--saffron);
-opacity:.12;
-filter:blur(150px);
-}
-
-.header{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-padding:20px 5%;
-z-index:100;
-}
-
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-text-decoration:none;
-color:white;
-}
-
-.logo-ok{
-font-size:2rem;
-font-weight:800;
-line-height:1;
-}
-
-.logo-varanasi{
-display:flex;
-flex-direction:column;
-font-size:1rem;
-font-weight:800;
-color:var(--cyan);
-letter-spacing:2px;
-text-transform:uppercase;
-border-left:2px solid var(--saffron);
-padding-left:10px;
-line-height:1.05;
-}
-
-.logo-varanasi span{
-color:var(--saffron);
-font-size:.62rem;
-letter-spacing:1px;
-margin-top:2px;
-}
-
-.login-section{
-display:flex;
-justify-content:center;
-align-items:center;
-min-height:100vh;
-padding:20px;
-}
-
-.login-card{
-width:420px;
-max-width:100%;
-
-background:rgba(255,255,255,.04);
-
-backdrop-filter:blur(20px);
-
-border:1px solid rgba(255,255,255,.08);
-
-border-radius:24px;
-
-padding:40px;
-
-box-shadow:
-0 20px 50px rgba(0,0,0,.35);
-}
-
-.login-title{
-font-family:'Marcellus',serif;
-font-size:2.2rem;
-text-align:center;
-margin-bottom:8px;
-}
-
-.login-subtitle{
-text-align:center;
-color:var(--muted);
-margin-bottom:30px;
-}
-
-.input-box{
-display:flex;
-align-items:center;
-gap:12px;
-
-background:#0f1d31;
-
-border:1px solid rgba(255,255,255,.06);
-
-border-radius:14px;
-
-padding:15px;
-
-margin-bottom:16px;
-}
-
-.input-box i{
-color:var(--cyan);
-}
-
-.input-box input{
-width:100%;
-background:none;
-border:none;
-outline:none;
-color:white;
-font-size:15px;
-}
-
-.input-box input::placeholder{
-color:var(--muted);
-}
-
-.login-btn{
-width:100%;
-border:none;
-cursor:pointer;
-
-padding:15px;
-
-border-radius:14px;
-
-font-size:16px;
-font-weight:700;
-
-background:linear-gradient(
-135deg,
-var(--saffron),
-var(--cyan)
-);
-
-color:white;
-
-transition:.3s;
-}
-
-.login-btn:hover{
-transform:translateY(-2px);
-}
-
-.extra{
-display:flex;
-justify-content:space-between;
-margin-top:15px;
-font-size:14px;
-}
-
-.extra a{
-color:var(--cyan);
-text-decoration:none;
-}
-
-.signup-text{
-text-align:center;
-margin-top:25px;
-color:var(--muted);
-}
-
-.signup-text a{
-color:var(--cyan);
-text-decoration:none;
-}
-
-@media(max-width:500px){
-
-.login-card{
-padding:30px 22px;
-}
-
-.logo-ok{
-font-size:1.8rem;
-}
-
-.logo-varanasi{
-font-size:.9rem;
-}
-
-.login-title{
-font-size:1.8rem;
-}
-
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Outfit',sans-serif}
+:root{--bg:#060e1a;--text:#f4f6f9;--muted:#8a95ac;--cyan:#00f2fe;--saffron:#ff6b08}
+body{background:var(--bg);color:var(--text);min-height:100vh;overflow:hidden}
+body:before{content:'';position:absolute;top:-150px;right:-100px;width:400px;height:400px;background:var(--cyan);opacity:.12;filter:blur(150px)}
+body:after{content:'';position:absolute;bottom:-150px;left:-100px;width:350px;height:350px;background:var(--saffron);opacity:.12;filter:blur(150px)}
+.header{position:absolute;top:0;left:0;width:100%;padding:20px 5%}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:#fff}
+.logo-ok{font-size:2rem;font-weight:800}.logo-varanasi{display:flex;flex-direction:column;color:var(--cyan);font-weight:800;border-left:2px solid var(--saffron);padding-left:10px}.logo-varanasi span{font-size:.65rem;color:var(--saffron)}
+.wrap{display:flex;justify-content:center;align-items:center;min-height:100vh;padding:20px}
+.card{width:420px;max-width:100%;background:rgba(255,255,255,.04);backdrop-filter:blur(20px);padding:40px;border-radius:24px;border:1px solid rgba(255,255,255,.08)}
+h1{font-family:'Marcellus',serif;text-align:center}p{text-align:center;color:var(--muted);margin:8px 0 25px}
+.input{display:flex;align-items:center;gap:12px;background:#0f1d31;padding:15px;border-radius:14px;margin-bottom:16px}
+.input i{color:var(--cyan)}.input input{flex:1;background:none;border:none;outline:none;color:#fff}
+button{width:100%;padding:15px;border:none;border-radius:14px;background:linear-gradient(135deg,var(--saffron),var(--cyan));font-weight:700;cursor:pointer}
+.links{display:flex;justify-content:space-between;margin-top:15px}.links a,.bottom a{color:var(--cyan);text-decoration:none}.bottom{text-align:center;margin-top:20px;color:var(--muted)}
 </style>
 </head>
 <body>
-
 <header class="header">
-
-<a href="#" class="logo">
-
-<div class="logo-ok">
-OK
-</div>
-
-<div class="logo-varanasi">
-VARANASI
-<span>City of Light</span>
-</div>
-
-</a>
-
+<a href="index.html" class="logo"><div class="logo-ok">OK</div><div class="logo-varanasi">VARANASI<span>City of Light</span></div></a>
 </header>
 
-<section class="login-section">
+<section class="wrap">
+<div class="card">
+<h1>Welcome Back</h1>
+<p>Login to continue your journey</p>
 
-<div class="login-card">
+<form id="loginForm" action="api/login.php" method="POST">
+<div class="input"><i class="fa-solid fa-envelope"></i><input type="email" name="email" placeholder="Email Address" required></div>
+<div class="input"><i class="fa-solid fa-lock"></i><input type="password" name="password" placeholder="Password" required></div>
 
-<h1 class="login-title">
-Welcome Back
-</h1>
+<button type="submit">Login</button>
 
-<p class="login-subtitle">
-Login to continue your journey
-</p>
-
-<form id="loginForm">
-
-<div class="input-box">
-<i class="fa-solid fa-envelope"></i>
-<input
-type="email"
-placeholder="Email Address"
-required>
+<div class="links">
+<a href="forgot-password.html">Forgot Password?</a>
+<a href="index.html">Home</a>
 </div>
-
-<div class="input-box">
-<i class="fa-solid fa-lock"></i>
-<input
-type="password"
-placeholder="Password"
-required>
-</div>
-
-<button class="login-btn">
-Login
-</button>
-
-<div class="extra">
-<a href="#">Forgot Password?</a>
-<a href="#">Help</a>
-</div>
-
 </form>
 
-<div class="signup-text">
+<div class="bottom">
 Don't have an account?
-<a href="#">Create Account</a>
+<a href="register.html">Create Account</a>
 </div>
-
 </div>
-
 </section>
 
 <script>
-
-document
-.getElementById("loginForm")
-.addEventListener("submit",function(e){
-
+const loginForm=document.getElementById("loginForm");
+loginForm.addEventListener("submit",function(e){
 e.preventDefault();
-
-alert("Welcome to OK Varanasi 🚀");
-
+const formData=new FormData(loginForm);
+fetch("api/login.php",{method:"POST",body:formData})
+.then(r=>r.text())
+.then(data=>{
+if(data.trim()==="success"){
+alert("Login Successful!");
+window.location.href="index.html";
+}else{
+alert(data);
+}
+})
+.catch(()=>alert("Something went wrong."));
 });
-
 </script>
-
 </body>
 </html>
