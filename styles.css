@@ -1750,3 +1750,125 @@ img{max-width:100%;height:auto;}
 .hero h2{font-size:1.8rem!important;}
 .section-title{font-size:2rem;}
 }
+
+
+
+
+/* ===== Premium Mobile Responsive Patch ===== */
+@media (max-width:768px){
+  body{overflow-x:hidden;}
+  header{padding:.6rem 0;}
+  .container{padding:0 16px;}
+  .nav-actions .btn-primary{display:none;}
+  .mobile-toggle{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:42px;
+    height:42px;
+    border-radius:12px;
+    background:rgba(255,255,255,.06);
+    backdrop-filter:blur(12px);
+  }
+  .nav-menu{
+    position:fixed;
+    top:70px;
+    right:12px;
+    width:230px;
+    max-width:calc(100vw - 24px);
+    background:rgba(10,25,47,.96);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:14px;
+    display:flex;
+    flex-direction:column;
+    gap:6px;
+    transform:translateX(120%);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+    box-shadow:0 18px 40px rgba(0,0,0,.45);
+    z-index:1001;
+  }
+  .nav-menu.active{
+    transform:translateX(0);
+    opacity:1;
+    visibility:visible;
+  }
+  .nav-item a{
+    display:block;
+    padding:12px 14px;
+    border-radius:12px;
+  }
+  .nav-item a:hover{
+    background:rgba(255,255,255,.06);
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:110px;
+    padding-bottom:50px;
+  }
+  .hero-content{
+    margin-top:0;
+  }
+  .hero h2{
+    font-size:2.2rem;
+    line-height:1.2;
+    word-break:break-word;
+  }
+  .hero-description{
+    font-size:.95rem;
+    padding:0 4px;
+  }
+  .hero-search{
+    flex-direction:column;
+    border-radius:18px;
+    padding:10px;
+    gap:10px;
+  }
+  .hero-search i{display:none;}
+  .hero-search input{
+    width:100%;
+    padding:12px;
+  }
+  .hero-search button{
+    width:100%;
+  }
+  .hero-actions{
+    flex-direction:column;
+    gap:12px;
+  }
+  .hero-actions .btn{
+    width:100%;
+  }
+  .hero-stats{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+    margin-top:30px;
+  }
+
+  .explore-grid,
+  .food-grid,
+  .guides-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+    gap:24px;
+  }
+  .places-grid,
+  .directory-grid{
+    grid-template-columns:1fr;
+  }
+  .explore-visual,
+  .food-showcase{
+    height:300px;
+  }
+  .directory-controls{
+    flex-direction:column;
+    align-items:stretch;
+  }
+  .directory-search-bar{
+    max-width:100%;
+  }
+}
