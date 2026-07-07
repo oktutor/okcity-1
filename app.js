@@ -775,19 +775,38 @@ updateCounters();
 
 // Contact Us Form submit
 function handleContactSubmit(e) {
-  e.preventDefault();
-  
-  const name = document.getElementById("contact-name").value;
-  const email = document.getElementById("contact-email").value;
-  const subject = document.getElementById("contact-subject").value;
-  const message = document.getElementById("contact-message").value;
-  
-  // In a real app we would POST. Here we simulate success.
-  console.log("Contact submission received:", { name, email, subject, message });
-  contactForm.reset();
-  showToast(`Thank you, ${name}! Your message has been sent to our support team.`);
-}
+    e.preventDefault();
 
+    const formData = new FormData(contactForm);
+
+    fetch("api/contact.php", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+
+        if (data.trim() === "success") {
+
+            contactForm.reset();
+
+            showToast("Thank you! Your message has been sent successfully.");
+
+        } else {
+
+            showToast(data);
+
+        }
+
+    })
+    .catch(error => {
+
+        console.error(error);
+
+        showToast("Something went wrong. Please try again.");
+
+    });
+}
 // Newsletter submit
 function handleNewsletterSubmit(e) {
   e.preventDefault();
